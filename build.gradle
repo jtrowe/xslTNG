@@ -154,6 +154,13 @@ def findPygmentize() {
         }
       }
     }
+    else
+    {
+      def testfile = new File("${segment}/pygmentize")
+      if (testfile.exists() && testfile.canExecute()) {
+        script = testfile.toString()
+      }
+    }
   }
 
   if (script == null) {
